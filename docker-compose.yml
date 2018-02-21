@@ -1,8 +1,10 @@
-web:
-  image: nginx
-  volumes:
-   - ./nginx/conf.d/default.conf:/etc/conf.d/static.conf
-   - .:/usr/share/nginx/html
-  ports:
-   - "8080:80"
+version: '3'
 
+services:
+  static-web:
+    image: nginx
+    volumes:
+      - ./nginx/conf.d/default.conf:/etc/conf.d/static.conf
+      - .:/usr/share/nginx/html
+    ports:
+      - "8080:80"
